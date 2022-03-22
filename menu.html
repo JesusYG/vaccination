@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Menú Responsive</title>
+<link href="menu.css" rel="stylesheet" type="text/css"/>
+<link href="normalize.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<script src="jquery2.js"></script>
+<script>
+$(document).ready(function() {
+	
+	var contador='izquierda';
+	
+	
+	$('.menu_bar').click(function(){
+		
+		if(contador=='izquierda'){
+			$('nav').animate({
+			left:'0'
+			});
+			contador= 'derecha';
+			$('.ver1').animate({
+			opacity:'0',
+			});
+			$('.ver2').animate({
+			opacity:'1',
+			});
+		}else{
+			$('nav').animate({
+			left:'-100%'
+			});
+			contador = 'izquierda';
+			$('.ver1').animate({
+			opacity:'1',
+			});
+			$('.ver2').animate({
+			opacity:'0',
+			});
+		}
+		
+		
+	});//fin funcion .menu_bar
+	
+	
+	
+});//fin funcion ready
+</script>
+</head>
+
+<body>
+<header>
+	<div class="menu_bar">
+    	<a href="#" class="bt_menu"><img src="icono.png"/></a><span class="ver1">Ver Menú</span><span class="ver2">Ocultar Menú</span>
+    </div>
+    <nav>
+    	<ul>
+        	<li><a href="#"><i class="fa fa-home"></i>Inicio</a></li>
+            <li><a href="#"><i class="fa fa-building"></i>Trabajos</a></li>
+            <li><a href="#"><i class="fa fa-briefcase"></i>Proyectos</a></li>
+            <li><a href="#"><i class="fa fa-hand-paper-o"></i>Servicios</a></li>
+            <li><a href="#"><i class="fa fa-male"></i>Contactos</a></li>
+        </ul>
+    </nav>
+</header>
+</body>
+</html>
